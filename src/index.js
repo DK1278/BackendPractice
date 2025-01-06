@@ -5,8 +5,8 @@ const express = require("express");
 const connectDB = require("../src/db/index.js");
 const app = express();
 
-const port = process.env.PORT;
-connectDB()
+const port = process.env.PORT || 9000;
+connectDB();
 
 // (async () => {
 //   try {
@@ -21,5 +21,5 @@ connectDB()
 //   }
 // })();
 app.listen(port, () => {
-  console.log("Listen on " + port);
+  console.log("Server is running at port : " + port);
 });
